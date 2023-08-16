@@ -1,14 +1,17 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-// const host='localhost';
-// const port = 30;
+const host='127.0.0.1';
+const port = 8080;
 // const fs=require('fs');
 const mongoose = require("mongoose");
 // const { default: mongoose } = require('mongoose');
 const bodyparser = require("body-parser", { UserNewUrlparser: true });
-//var MONGODB_CONNECT_URI="mongodb+srv://harshith:harshith1520@cluster.jl03mrs.mongodb.net/?retryWrites=true&w=majority";
-mongoose.connect("mongodb+srv://harshith:harshith1520@cluster.jl03mrs.mongodb.net/?retryWrites=true&w=majority");
+// var MONGODB_CONNECT_URI="mongodb+srv://harshith:harshith1520@cluster.jl03mrs.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect("mongodb+srv://harshith:harshith1520@cluster.jl03mrs.mongodb.net/danceDetails?retryWrites=true&w=majority");
+//mongoose.connect("mongodb+srv://cluster.jl03mrs.mongodb.net/");
+// --apiVersion 1 --username harshith
 
 var details = new mongoose.Schema({
   name: String,
@@ -19,13 +22,23 @@ var details = new mongoose.Schema({
 
 var con = mongoose.model("con", details);
 
+// const Schema = mongoose.Schema;
+// const UserSchema = new Schema({
+//     name: {type:String},
+//     pass: {type:String},
+//     add: {type:String},
+//     remarks: {type:String},
+// });
+
+// var User = mongoose.model('User', UserSchema);
+
 app.use('/static', express.static('static'))
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "pug");
 app.set('views',path.join(__dirname,'views'))
 app.get("/", (req, res) => {
   const ravi = { title: "fall" };
-  res.status(200).render("index.pug", ravi);
+  res.status(200).render("contact.pug", ravi);
 });
 
 app.post("/", (req, res) => {
@@ -46,6 +59,6 @@ app.post("/", (req, res) => {
   // res.status(200).render('index.pug',ravi);
 });
 
-app.listen(8080,() => {
-  console.log(`success`);
+app.listen(port, () => {
+  console.log(`success http://${host}:${port}`);
 });

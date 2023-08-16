@@ -38,7 +38,7 @@ app.set("view engine", "pug");
 app.set('views',path.join(__dirname,'views'))
 app.get("/", (req, res) => {
   const ravi = { title: "fall" };
-  res.status(200).render("contact.pug", ravi);
+  res.status(200).render("index.pug", ravi);
 });
 
 app.post("/", (req, res) => {

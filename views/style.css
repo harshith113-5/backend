@@ -1,0 +1,110 @@
+*
+{
+    margin: 0px;
+}
+.nav
+{
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+}
+.nav img
+{
+    filter: invert(1);
+    height: 30px;
+    justify-content: left;
+}
+ul
+{
+    display: flex;
+}
+li
+{
+    list-style: none;
+    padding: 8px;
+}
+li a
+{
+    text-decoration: none;
+    padding: 7px 11px;
+}
+
+.con
+{
+    /* background: center/cover no-repeat url("/static/img/logo.png");
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: center/cover no-repeat url("/static/img/bg.jpg") ;
+    height: 300px;
+}
+.con h1
+{
+    color: whitesmoke;
+}
+
+.mission
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mission .boxes
+{
+    display: flex;
+    /* justify-content: space-between; */
+}
+.mission .box
+{
+    /* display: flex; */
+    width: 300px;
+    height: 100px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.sponcers
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sponcers .image
+{
+    display: flex;
+}
+.sponcers img
+{
+    width: 100px;
+    height: 100px;
+    padding: 50px;
+}
+.copy
+{
+    background-color: black;
+    color: white;
+}
+
+.contact
+{
+    background-color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.contact input
+{
+    
+    display: block;
+    margin: 5px;
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+}

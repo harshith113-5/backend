@@ -7,8 +7,8 @@ const app = express();
 const mongoose = require("mongoose");
 // const { default: mongoose } = require('mongoose');
 const bodyparser = require("body-parser", { UserNewUrlparser: true });
-var MONGODB_CONNECT_URI="mongodb+srv://harshith:harshith1520@cluster.jl03mrs.mongodb.net/?retryWrites=true&w=majority";
-mongoose.connect(MONGODB_CONNECT_URI);
+//var MONGODB_CONNECT_URI="mongodb+srv://harshith:harshith1520@cluster.jl03mrs.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(process.env.MONGODB_CONNECT_URI);
 
 var details = new mongoose.Schema({
   name: String,

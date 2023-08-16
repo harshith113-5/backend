@@ -2,12 +2,13 @@ const express = require("express");
 const path = require("path");
 const app = express();
 // const host='localhost';
-const port = 30;
+// const port = 30;
 // const fs=require('fs');
 const mongoose = require("mongoose");
 // const { default: mongoose } = require('mongoose');
 const bodyparser = require("body-parser", { UserNewUrlparser: true });
-mongoose.connect("mongodb://127.0.0.1/dancedetails");
+var MONGODB_CONNECT_URI="mongodb+srv://harshith:harshith1520@cluster.jl03mrs.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(MONGODB_CONNECT_URI);
 
 var details = new mongoose.Schema({
   name: String,
@@ -45,6 +46,6 @@ app.post("/", (req, res) => {
   // res.status(200).render('index.pug',ravi);
 });
 
-app.listen(port, () => {
-  console.log(`success http://${port}`);
+app.listen(8080,() => {
+  console.log(`success`);
 });
